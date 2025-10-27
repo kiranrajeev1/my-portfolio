@@ -131,3 +131,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add this block at the top or within your @layer base if preferred */
+html {
+  scroll-behavior: smooth;
+}
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ... rest of your index.css file ... */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
