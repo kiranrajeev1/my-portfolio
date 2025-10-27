@@ -1,11 +1,13 @@
-    import { AuroraBackground } from "@/components/ui/aurora-background";
+import Hero from "./Hero";
+import About from "./About";
 
-    const Home = () => {
-    return (
-        <div className="w-full h-full">
-            <AuroraBackground />
-        </div>
-        );
-    };
+const Home = () => {
+  return (
+      <div >
+        <Hero />
+        <About />
+      </div>
+  );
+};
 
-    export default Home;
+export default Home;
