@@ -57,52 +57,48 @@ const Navbar = () => {
   }, []); // Run only once on mount
 
   // --- Navigation Links ---
-  // Define links data
   const links = [
     { href: '#hero', label: 'Home' },
     { href: '#about', label: 'About' },
-    { href: '#projects', label: 'Projects' }, // Add corresponding section ID in Home.jsx
-    { href: '#contact', label: 'Contact' }, // Add corresponding section ID in Home.jsx
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
   ];
 
-  // Map links to JSX elements
+  // Map links to JSX elements with new outline highlight
   const navLinks = links.map((link) => (
-  <a
-    key={link.href}
-    href={link.href}
-    onClick={handleLinkClick} // Assumes handleLinkClick is defined elsewhere to close mobile menu
-    className={cn(
-      "px-3 py-1 rounded-full transition-all duration-300 relative", // Base styles
-      "hover:bg-white/10 hover:dark:bg-black/10", // Hover glass effect
-      activeSection === link.href.substring(1)
-        ? "bg-white/20 dark:bg-black/20 shadow-md font-medium" // Active state: Glass effect + shadow
-        : "font-light"
-    )}
-  >
-    {link.label}
-    {/* Underline motion.div has been removed */}
-  </a>
-));
+    <a
+      key={link.href}
+      href={link.href}
+      onClick={handleLinkClick}
+      className={cn(
+        "px-3 py-1 rounded-full transition-all duration-300", // Base styles
+        "hover:bg-white/10 hover:dark:bg-black/10", // Hover glass effect
+        activeSection === link.href.substring(1)
+          ? "ring-1 ring-black/20 dark:ring-white/20 font-medium" // Active state: Outline effect
+          : "font-light"
+      )}
+    >
+      {link.label}
+    </a>
+  ));
 
-  // --- Mobile Menu Animation ---
   const menuVariants = {
     hidden: { opacity: 0, y: -20, transition: { duration: 0.2 } },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
   };
 
   return (
-    <motion.nav /* Navbar load animation */
+    <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}
       className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-4xl z-50"
     >
       <div className="relative">
-        <div /* Main pill container */
-          className="p-4 rounded-full shadow-lg bg-white/20 text-black border border-black/20 dark:bg-black/20 dark:text-white dark:border-white/20 backdrop-blur-lg">
+        <div className="p-4 rounded-full shadow-lg bg-white/20 text-black border border-black/20 dark:bg-black/20 dark:text-white dark:border-white/20 backdrop-blur-lg">
           <div className="flex justify-between items-center">
             {/* Desktop View */}
-            <div className="hidden md:flex items-center gap-2">{navLinks}</div> {/* Reduced gap */}
+            <div className="hidden md:flex items-center gap-2">{navLinks}</div>
             <div className="hidden md:flex items-center gap-4">
               <a href="#contact" onClick={handleLinkClick} className="px-4 py-2 rounded-full transition-colors bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
                 Get in Touch
