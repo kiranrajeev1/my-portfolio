@@ -1,5 +1,7 @@
 import Hero from "./Hero";
 import About from "./About";
+import Services from "./Services";
+import Skills from "./Skills";
 
 const Home = () => {
   return (
@@ -13,6 +15,8 @@ const Home = () => {
       <section id="about" className="py-24"> {/* Added padding for scroll spacing */}
         <About />
       </section>
+      <Services />  
+        <Skills />
     </main>
   );
 };

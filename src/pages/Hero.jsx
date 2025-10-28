@@ -5,7 +5,7 @@ import { Linkedin, Github, Download } from 'lucide-react'; // 2. Import icons
 
 const Hero = () => {
   // --- Replace with the actual path to your resume file ---
-  const resumeUrl = 'https://drive.google.com/file/d/1-X3_SbNCMv9MnH6IrF7KKjYd4ekX9qpy/view?usp=drive_link'; 
+  const resumeUrl = '/path/to/your/resume.pdf'; 
 
   return (
     <motion.div
