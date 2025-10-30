@@ -24,7 +24,9 @@ const GlassButton = ({ children, onClick, className, ...props }) => {
       )}
       {...props}
     >
-      {children}
+     <span className="relative z-10 flex items-center gap-2">
+         {children}
+      </span>
     </motion.button>
   );
 };
